@@ -13,7 +13,7 @@ export type Filter = Type | '';
 export class NavigatorComponent implements OnInit {
   type: Filter = '';
 
-  @Input() transactions: ITransaction[];
+  transactions: ITransaction[];
 
   // You can change this variable to control how many transactions will be shown in table.
   // If limit will be 0, than the table will show all filtered transactions.
@@ -22,6 +22,9 @@ export class NavigatorComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe((transactions) => {
+      this.transactions = transactions.transactions;
+    });
     this.activatedRoute.queryParamMap.subscribe((param) => {
       this.type = numberToFilter(param.get('tab') as string);
     });

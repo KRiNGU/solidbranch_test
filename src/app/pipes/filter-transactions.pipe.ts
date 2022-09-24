@@ -10,7 +10,6 @@ export class FilterTrancactionsPipe implements PipeTransform {
     filterType: string,
     limit: number
   ): ITransaction[] {
-    console.log(filterType);
     let filteredTransactions = transactions;
     if (filterType) {
       filteredTransactions = filteredTransactions.filter(
