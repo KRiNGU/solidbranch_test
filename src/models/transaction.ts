@@ -1,6 +1,13 @@
+export type Type = 'income' | 'outcome' | 'loan' | 'investment';
+
+export interface IData {
+  total: number;
+  data: ITransaction[];
+}
+
 export interface ITransaction {
-  type: 'income' | 'outcome' | 'loan' | 'investment';
-  id: string;
+  type: Type;
+  _id: string;
   amount: number;
   name: {
     first: string;

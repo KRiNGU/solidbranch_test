@@ -1,0 +1,18 @@
+<h2>{{ type }}</h2>
+
+<div class="container rounded">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="border-top-0">Name</th>
+        <th scope="col" class="border-top-0">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions" scope="row">
+        <th>{{ transaction.name.first }}</th>
+        <th>{{ transaction.amount }}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
