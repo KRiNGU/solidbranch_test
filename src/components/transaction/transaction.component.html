@@ -1,0 +1,10 @@
+<div class="container border rounded d-flex flex-column">
+  <p class="fw-bolder">{{ count }}</p>
+  <p class="fw-bold">{{ name }}</p>
+  <a
+    [routerLink]="this.link.path"
+    [queryParams]="this.link.params"
+    class="btn btn-primary text-light"
+    >See all</a
+  >
+</div>

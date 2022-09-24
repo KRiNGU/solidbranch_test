@@ -1,0 +1,45 @@
+<div class="container border d-flex flex-column align-items-center p-5">
+  <h3 class="h3">Welcome</h3>
+  <a routerLink="/navigator" class="btn btn-primary text-light mt-4"
+    >See transactions</a
+  >
+</div>
+<div
+  class="count-transactions-container container border d-flex flex-column align-items-center p-2"
+>
+  <p class="m-0">You have {{ count }} transactions</p>
+</div>
+<div class="counts container">
+  <div class="row mt-3">
+    <app-transaction
+      [count]="countedTransactions.income"
+      [name]="'Income'"
+      [type]="'income'"
+      [link]="{ path: '/navigator', params: { tab: 0 } }"
+      class="col p-0"
+    ></app-transaction>
+    <app-transaction
+      [count]="countedTransactions.investment"
+      [name]="'Investments'"
+      [type]="'investment'"
+      [link]="{ path: '/navigator', params: { tab: 1 } }"
+      class="col p-0"
+    ></app-transaction>
+  </div>
+  <div class="row mt-3">
+    <app-transaction
+      [count]="countedTransactions.outcome"
+      [name]="'Outcome'"
+      [type]="'outcome'"
+      [link]="{ path: '/navigator', params: { tab: 2 } }"
+      class="col p-0"
+    ></app-transaction>
+    <app-transaction
+      [count]="countedTransactions.loan"
+      [name]="'Loans'"
+      [type]="'loan'"
+      [link]="{ path: '/navigator', params: { tab: 3 } }"
+      class="col p-0"
+    ></app-transaction>
+  </div>
+</div>

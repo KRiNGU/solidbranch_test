@@ -12,7 +12,6 @@ export type Filter = Type | '';
 })
 export class NavigatorComponent implements OnInit {
   type: Filter = '';
-
   transactions: ITransaction[];
 
   // You can change this variable to control how many transactions will be shown in table.
