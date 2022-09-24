@@ -9,7 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions" scope="row">
+      <tr
+        *ngFor="let transaction of transactions | filterTransactions: type"
+        scope="row"
+      >
         <th>{{ transaction.name.first }}</th>
         <th>{{ transaction.amount }}</th>
       </tr>
